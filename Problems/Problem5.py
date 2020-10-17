@@ -1,4 +1,5 @@
 # ProblemURL: https://projecteuler.net/problem=5
+
 # FIND PRIME FACTORS
 # 1 = 1
 # 2 = 2
@@ -30,3 +31,24 @@
 # 1, 2^4, 3^2, 5, 7, 11, 13, 17, 19
 # 1 * 16 * 9 * 5 * 7 * 11 * 13 * 17 * 19
 
+
+def primefactors(x):
+    primes = []
+    numbers = [x]
+    while numbers:
+        found = False
+        temp = []
+        for number in numbers:
+            for i in range(2, int(number), 1):
+                if number % i == 0:
+                    temp.append(i)
+                    temp.append(number / i)
+                    found = True
+                    break
+            if not found:
+                primes.append(int(number))
+        numbers = temp
+    return primes
+
+
+print(primefactors(2520))
