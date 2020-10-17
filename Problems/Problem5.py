@@ -51,4 +51,19 @@ def primefactors(x):
     return primes
 
 
-print(primefactors(2520))
+a = 1
+b = 20
+primeFactorList = []
+smallestMultiple = 1
+for i in range(a, b):
+    primeFactorList.append(primefactors(i))
+uniqueFactors = set(x for y in primeFactorList for x in y)
+
+
+for uniqueFactor in uniqueFactors:
+    largestCount = 0
+    for x in primeFactorList:
+        if largestCount < x.count(uniqueFactor):
+            largestCount = x.count(uniqueFactor)
+    smallestMultiple *= uniqueFactor**largestCount
+print(smallestMultiple)
