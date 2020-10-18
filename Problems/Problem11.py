@@ -1,4 +1,4 @@
-# ProblemURL: https://projecteuler.net/problem=10
+# ProblemURL: https://projecteuler.net/problem=11
 grid = [
     [ 8,  2, 22, 97, 38, 15, 00, 40, 00, 75,  4,  5,  7, 78, 52, 12, 50, 77, 91,  8],
     [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48,  4, 56, 62, 00],
