@@ -1,6 +1,14 @@
 # ProblemURL: https://projecteuler.net/problem=10
 import multiprocessing as mp
 
+def primes(n):
+    """ Returns  a list of primes < n """
+    sieve = [True] * n
+    for i in range(3,int(n**0.5)+1,2):
+        if sieve[i]:
+            sieve[i*i::2*i]=[False]*((n-i*i-1)//(2*i)+1)
+    return [2] + [i for i in range(3,n,2) if sieve[i]]
+
 def isprime(argin):
     # Must be larger than 1
     if argin <= 1:
@@ -17,24 +25,14 @@ def isprime(argin):
     for i in range(2, argin):
         if argin % i == 0:
             return False
+    print(f"{argin} is prime")
     return True
-
-output = 2
-bigList = list(range(3, 2000001, 2))
-for i in bigList:
-    if not isprime(i):
-        for j in range(i, 2000001, i):
-            print(j)
-            try:
-                bigList.remove(j)
-            except ValueError:
-                pass
-    print(i)
-print(bigList)
 
 
 def main():
-    pool = mp.Pool(mp.cpu_count())
+    mylist = primes(2000001)
+    print(sum(mylist))
+
 
 if __name__ == "__main__":
-  main()
+    main()
