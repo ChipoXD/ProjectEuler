@@ -9,9 +9,13 @@
 m = 2
 while True:
     for n in range(1, m):
-        if n == (50 / m) - m:
+        if n == (500 / m) - m:
+            a = m**2 - n**2
+            b = 2 * n * m
+            c = n**2 + m**2
             print(f"{n} {m}")
+            print(f"a={a}, b={b}, c={c}")
+            print(a + b + c)
+            print(a * b * c)
             exit()
     m += 1
-
-    print(m)
