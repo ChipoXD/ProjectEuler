@@ -1,3 +1,4 @@
+# ProblemURL: https://projecteuler.net/problem=67
 f = open('Problem67data.txt', 'r')
 content = f.read().split("\n")
 f.close()
