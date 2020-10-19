@@ -29,15 +29,19 @@ def fact(x):
     return f
 
 
+def propperdivisors(mylist):
+    d = 1
+    uniqueList = list(set(myList))
+    for unique in uniqueList:
+        d *= (myList.count(unique) + 1)
+    return d
+
+
 n = 0
-myList = []
 propperDivisors = 0
 while propperDivisors < 500:
     n += 1
-    propperDivisors = 1
     tri = trianglenumber(n)
     myList = primefactors(tri)
-    uniqueList = list(set(myList))
-    for unique in uniqueList:
-        propperDivisors *= (myList.count(unique) + 1)
+    propperDivisors = propperdivisors(myList)
     print(f"{int(tri)}: {propperDivisors} - {myList}")
