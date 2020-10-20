@@ -1,4 +1,4 @@
-# ProblemURL: https://projecteuler.net/problem=2
+# ProblemURL: https://projecteuler.net/problem=22
 f = open('Problem22data.txt', 'r')
 content = f.read().split("\",\"")
 f.close()
