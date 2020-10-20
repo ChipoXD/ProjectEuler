@@ -84,12 +84,23 @@ def fact(x):
     return f
 
 
-def propperdivisors(mylist):  # Ammount of divisors given from a list of primes
+def propperdivisorsammount(mylist):  # Ammount of divisors given from a list of primes
     d = 1
     uniqueList = list(set(mylist))
     for unique in uniqueList:
         d *= (mylist.count(unique) + 1)
     return d
+
+
+def devisorfromprimefactor(mylist):
+    tempList = []
+    unqieList = list(set(mylist))
+    for unqiue in unqieList:
+        a = []
+        for n in range(1, mylist.count(unqiue) + 1, 1):
+            a.append(unqiue**n)
+        tempList.append(a)
+    return tempList
 
 
 def collatz(argin):  # Algorythm which takes x / 2 for even and (x*3)+1 for odds
@@ -183,6 +194,19 @@ def allproductpairs(mylist):
         output.append(temp)
     output.sort()
     output.pop(-1)
+    return output
+
+
+def allsumpairs(mylist):
+    output = []
+    combination = list(itertools.product(*mylist))
+    for x in combination:
+        temp = 0
+        for y in x:
+            temp += y
+        if temp not in output:
+            output.append(temp)
+    output.sort()
     return output
 
 
