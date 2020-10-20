@@ -31,9 +31,9 @@ def fact(x):
 
 def propperdivisors(mylist):
     d = 1
-    uniqueList = list(set(myList))
+    uniqueList = list(set(mylist))
     for unique in uniqueList:
-        d *= (myList.count(unique) + 1)
+        d *= (mylist.count(unique) + 1)
     return d
 
 
