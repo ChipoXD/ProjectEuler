@@ -28,7 +28,7 @@ def ispalindrome(x):
     return True
 
 
-def isprime(x):
+def isprimebrute(x):
     # Must be larger than 1
     if x <= 1:
         return False
@@ -44,6 +44,14 @@ def isprime(x):
     for i in range(2, x):
         if x % i == 0:
             return False
+    return True
+
+
+def isfracrepeatingfromprimefactor(argin):
+    if len(argin) == 1 and argin[0] == 1:
+        return False
+    if argin.count(2) + argin.count(5) == len(argin):
+        return False
     return True
 
 
