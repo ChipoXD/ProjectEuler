@@ -210,6 +210,36 @@ def allsumpairs(mylist):
     return output
 
 
+def allperm(x):
+    output = ["0"]
+    for i in range(x-1):
+        chunks = (i+2)
+        chunklength = len(output)
+        output = output*chunks
+        for j in range(chunks):
+            for k in range(chunklength):
+                output[j*chunklength+k] = output[j*chunklength+k][:j] + str(i+1) + output[j*chunklength+k][j:]
+    return output
+
+
+def febonacci(arrgin):
+    output = [0, 1]
+    if arrgin == 0:
+        return 0
+    for i in range(arrgin-1):
+        output.append(output[-1] + output[-2])
+    return output[-1]
+
+
+def firstfebonacciatlen(arrgin):
+    output = [0, 1]
+    if arrgin == 0:
+        return 0
+    while len(str(output[-1])) < arrgin:
+        output.append(output[-1] + output[-2])
+    return str(f"{len(output) - 1}: {output[-1]}")
+
+
 class Month:
     def __init__(self, year, monthnumber):
         daysInYear = 365
