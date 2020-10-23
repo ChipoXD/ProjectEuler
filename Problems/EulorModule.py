@@ -248,6 +248,18 @@ def firstfebonacciatlen(arrgin):
     return str(f"{len(output) - 1}: {output[-1]}")
 
 
+def gcd(arg1, arg2):
+    output = 0
+    if arg1 > arg2:
+        a = arg1
+    else:
+        a = arg2
+    for i in range(1, a//2):
+        if arg1 % i == 0 and arg2 % 1 == 0:
+            output = i
+    return output
+
+
 class Month:
     def __init__(self, year, monthnumber):
         daysInYear = 365
