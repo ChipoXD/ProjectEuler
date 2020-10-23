@@ -1,3 +1,4 @@
+# ProblemURL: https://projecteuler.net/problem=28
 mylist = [1]
 n = 1
 while n < 1001:

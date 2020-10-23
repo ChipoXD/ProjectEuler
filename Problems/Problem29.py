@@ -1,3 +1,4 @@
+# ProblemURL: https://projecteuler.net/problem=29
 myList = []
 for a in range(2, 101, 1):
     for b in range(2, 101, 1):

@@ -1,4 +1,4 @@
-# ProblemURL: https://projecteuler.net/problem=28
+# ProblemURL: https://projecteuler.net/problem=27
 def primefactors(x):
     if x < 0:
         return []
