@@ -36,7 +36,7 @@ def pokerhand(arg1):
 
     # Handling Data
     simple_hand_num = [cardIndex[x[0]] for x in arg1]
-    simple_hand_num.sort(reverse = True)
+    simple_hand_num.sort(reverse=True)
     simple_hand_suit = [x[1] for x in arg1]
 
     # Checking for patterns

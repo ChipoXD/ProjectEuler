@@ -2,6 +2,24 @@
 import itertools
 
 
+def frequency_analysis(array, top_x):
+    output = dict.fromkeys(set(array), 0)
+    for x in array:
+        output[x] += 1
+    sorted_output = {k: v for k, v in sorted(output.items(), key=lambda x: x[1], reverse=True)}
+    return sorted_output
+
+
+def xor_encrypt(array, key):
+    output = []
+    for index, x in enumerate(array):
+        element = x ^ key[index % len(key)]
+        if chr(element) not in ALLOWED_CHAR:
+            return output
+        output.append(element)
+    return output
+
+
 def primefactors(x):
     primes = []
     numbers = [x]
